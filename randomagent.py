@@ -53,7 +53,7 @@ def start_multiple_simulations(sample_size, run_num, return_dict):
 
 
 def main():
-    number_runs = 1000
+    number_runs = 100
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
     pool = multiprocessing.Pool(10)
@@ -62,6 +62,8 @@ def main():
 
     pool.close()
     pool.join()
+
+    print(return_dict)
 
     all_turns = []
     all_durations = []
